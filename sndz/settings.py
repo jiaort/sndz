@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 Django settings for sndz project.
 
@@ -25,7 +26,7 @@ SECRET_KEY = '(ybq66nh97x*c7-=$_4$u_arnjx$-9hif#%t7bn!*_zqo3361)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -37,16 +38,18 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'bootstrap_pagination',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'utils.dlibs.middleware.request_init.RequestInitMiddleware'
 ]
 
 ROOT_URLCONF = 'sndz.urls'
@@ -70,7 +73,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'sndz.wsgi.application'
 
 
-# Database
+# Mysql Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 MYSQLDB_CONNECT_TIMEOUT = 1
 DATABASES = {
@@ -92,6 +95,20 @@ DATABASES = {
     }
 }
 
+# Redis
+CACHES = {
+    'default': {
+        'BACKEND': 'django_redis.cache.RedisCache',
+        'LOCATION': 'redis://127.0.0.1:6379/1',
+        'OPTIONS': {
+            'CLIENT_CLASS': 'django_redis.client.DefaultClient',
+            'PASSWORD': '',
+            'CONNECTION_POOL_KWARGS': {
+                'max_connections': 100
+            },
+        }
+    },
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
@@ -115,18 +132,40 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'zh-Hans'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
+
+# logger of libs
+from utils.libs.config.logger_settings import *
+# 重新更新所有handlers的filename，因为LOGGING是个DICT，在logger_conf内已经创建成功，需要再次更新
+LOG_ROOT = BASE_DIR
+for key, handler in LOGGING['handlers'].items():
+    if handler.get('filename', None):
+        # 将logs文件夹定义为项目根目录的上一层，这由docker部署目录结构决定
+        handler['filename'] = os.path.join(LOG_ROOT, '../logs', os.path.basename(handler['filename']))
+
+# version
+from version import VERSION as VER, BUILD
+VERSION = '%s.%s' % (VER, BUILD)
+
+# import local settings
+try:
+    from .local_settings import *
+    print "\033[1;32;40m%s\033[0m" % "local_settings imported."
+except ImportError:
+    pass
