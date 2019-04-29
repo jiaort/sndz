@@ -1,0 +1,43 @@
+# -*- coding: utf-8 -*-
+from libs.config.logger_settings import *
+from settings import INSTALLED_APPS, MIDDLEWARE
+
+
+DEBUG = True
+
+# Database
+MYSQLDB_CONNECT_TIMEOUT = 1
+DATABASES = {
+    'default': {
+        'CONN_MAX_AGE': 3600,
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'pandora-marketing',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
+        'TEST': {
+            'CHARSET': 'utf8',
+            'COLLATION': 'utf8_general_ci'
+        },
+        'OPTIONS': {
+            'connect_timeout': MYSQLDB_CONNECT_TIMEOUT,
+        }
+    }
+}
+
+# 不往sentry发送错误
+RAVEN_CONFIG = {}
+
+# django-cors-headers
+INSTALLED_APPS += ['corsheaders']
+MIDDLEWARE = ['corsheaders.middleware.CorsMiddleware'] + MIDDLEWARE
+CORS_ALLOW_CREDENTIALS = True
+CORS_ORIGIN_WHITELIST = [
+    'i.zhengyi.dev:8080'
+]
+
+# log
+for key, handler in LOGGING['handlers'].items():
+    if handler.get('filename', None):
+        handler['filename'] = os.path.join(LOG_ROOT, "logs", os.path.basename(handler['filename']))
