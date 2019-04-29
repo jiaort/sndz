@@ -1,0 +1,11 @@
+hermes-test:
+    image: centos-django:1.0
+    container_name: sndz
+    restart: always
+    volumes:
+        - /home/data/docker/sndz/project:/opt/django/project
+        - /home/data/docker/sndz/logs:/opt/django/logs
+        - /home/data/docker/sndz/venv:/opt/django/venv
+        - /root/.ssh:/root/.ssh
+    ports:
+        - "8060:8000"
