@@ -1,5 +1,5 @@
 hermes-test:
-    image: centos-django:1.0
+    image: centos-django:1557050764
     container_name: sndz
     restart: always
     volumes:
