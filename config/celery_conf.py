@@ -19,7 +19,7 @@ CELERY_TASK_DEFAULT_ROUTING_KEY = 'default'
 # crotab任务
 CELERY_BEAT_SCHEDULE = {
     'test_celery': {
-        'task': 'app.privilege.tasks.test_celery',
+        'task': 'apps.privilege.tasks.test_celery',
         'schedule': timedelta(seconds=30),
     },
 }
