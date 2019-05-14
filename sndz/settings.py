@@ -150,6 +150,9 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
 
+# celery config
+from config.celery_conf import *
+
 # logger of libs
 from utils.libs.config.logger_settings import *
 # 重新更新所有handlers的filename，因为LOGGING是个DICT，在logger_conf内已经创建成功，需要再次更新
