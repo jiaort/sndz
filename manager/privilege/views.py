@@ -16,3 +16,13 @@ def login_view(request):
     """
     SysLogger.exception("121")
     return render(request, "privilege/login.html")
+
+
+def test_view(request):
+    """
+    管理端登录
+    :param request:
+    :return:
+    """
+    SysLogger.exception("121")
+    return render(request, "privilege/account.html")

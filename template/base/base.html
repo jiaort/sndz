@@ -7,8 +7,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
   <meta name="renderer" content="webkit"/>
-  <!-- Favicon icon -->
-  <link rel="icon" type="image/png" sizes="16x16" href="/static/img/favicon.ico">
   <title>随你定制管理后台</title>
   {% include "base/css.html" %}
   {% block css %}
@@ -16,7 +14,6 @@
   {% endblock %}
   {% include "base/js.html" %}
 </head>
-
 <body class="fix-header fix-sidebar card-no-border">
   <div class="preloader">
     <svg class="circular" viewBox="25 25 50 50">
@@ -24,53 +21,19 @@
     </svg>
   </div>
   <div id="main-wrapper">
-    <header class="topbar">
-      <nav class="navbar top-navbar navbar-expand-md navbar-light">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="/">
-            <b>
-              <img src=" " class="dark-logo" />
-              <img src="/static/images/logo.png" alt="homepage" class="light-logo" />
-            </b>
-            <span>
-              <img src="/static/images/logo.png" alt="homepage" class="dark-logo" width="128px" height="30px" />
-              <img src="/static/images/logo.png" class="light-logo" alt="homepage" />
-            </span>
-          </a>
-        </div>
-        {% include 'base/top.html' %}
-      </nav>
-    </header>
-    {% include 'base/menu.html' %}
+    {% include "base/top.html" %}
+    {% include "base/menu.html" %}
     <div class="page-wrapper">
       {% block header %}
 
       {% endblock %}
-      {% block message %}
-        <div class="col-12">
-          <section class="content-header" id="message-top"></section>
-          {% for message in messages %}
-            <ul class="alert alert-{{ message.tags }} dmsg">
-              <p> {{ message | safe }} </p>
-            </ul>
-          {% endfor %}
-        </div>
-      {% endblock %}
-
       {% block content %}
 
       {% endblock %}
-      <footer class="footer"> © 2019 <a href="javascript:;">上海中商网络股份有限公司</a></footer>
+      {% include "base/footer.html" %}
     </div>
   </div>
 
-  <script>
-    $(function(){
-      {% for class in active_classes %}
-        $("{{ class | safe }}").addClass('active');
-      {% endfor %}
-    });
-  </script>
   {% block script %}
 
   {% endblock %}
