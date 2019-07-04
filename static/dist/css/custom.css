@@ -1,0 +1,64 @@
+.dataTables_filter {
+  font-size: 14px;
+}
+
+div.dataTables_filter input {
+  width: 73%;
+}
+
+.about_content {
+  line-height: 2.0em;
+  font-size: 15px;
+}
+
+.upload-img-box {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.upload-img-box input {
+  width: 100%;
+  height: 80%;
+  background-color: transparent;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.rotate_90 {
+  float: left;
+  -ms-transform: rotate(90deg); /* IE 9 */
+  -moz-transform: rotate(90deg); /* Firefox */
+  -webkit-transform: rotate(90deg); /* Safari and Chrome */
+  -o-transform: rotate(90deg); /* Opera */
+  transform: rotate(90deg);
+}
+
+.rotate_180 {
+  float: left;
+  -ms-transform: rotate(180deg); /* IE 9 */
+  -moz-transform: rotate(180deg); /* Firefox */
+  -webkit-transform: rotate(180deg); /* Safari and Chrome */
+  -o-transform: rotate(180deg); /* Opera */
+  transform: rotate(180deg);
+}
+
+.rotate_270 {
+  float: left;
+  -ms-transform: rotate(270deg); /* IE 9 */
+  -moz-transform: rotate(270deg); /* Firefox */
+  -webkit-transform: rotate(270deg); /* Safari and Chrome */
+  -o-transform: rotate(270deg); /* Opera */
+  transform: rotate(270deg);
+}
+
+.choose-icon.active{
+  position: absolute;
+  right: 5%;
+  bottom: 4%;
+  width: 26px;
+  height: 26px;
+  background: url('/static/img/checked.png') no-repeat;
+}

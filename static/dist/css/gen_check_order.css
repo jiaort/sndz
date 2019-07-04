@@ -1,0 +1,182 @@
+body{
+  font-family: "Helvetica Neue","Microsoft YaHei", "黑体", Tahoma, Helvetica, arial, sans-serif;
+  /*font-weight: bold;*/
+  font-size: 14px;
+  color: #000;
+  background: #fff;
+}
+input,textarea{
+  font-family: "宋体","华文新魏";
+  font-weight: bold;
+  font-size: 14px;
+  color: #000;
+}
+.refund-car-h2{
+  position: relative;
+  margin: 0;
+  padding: 18px;
+}
+.logo{
+  position: absolute;
+  left: 0;
+  top:0;
+  width: 110px;
+  height: 46px;
+}
+.logo img{
+  width: 100%;
+  height: 100%;
+}
+.refund-bar{
+  width: 1000px;
+  margin: 0 auto;
+}
+.fr{
+  float: right;
+}
+.m-r{
+  margin-right: 30px;
+}
+.t-c{
+  text-align: center;
+}
+.t-l{
+  text-align: left;
+}
+.n-p{
+  padding: 0;
+}
+.p-l-39{
+  padding-left: 39px;
+}
+.f-b{
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.p-l-30{
+  padding-left: 30px;
+}
+.p-l-93{
+  padding-left: 93px;
+}
+.p-l-350{
+  padding-left: 350px;
+}
+.lh-min{
+  line-height:24px;
+}
+table.n-b td{
+  border-top: none;
+  border-left:none;
+}
+.no-b-r{
+  border-right: none;
+}
+.no-b-b{
+  border-bottom: none!important;
+}
+.embed-div{
+  padding: 5px 0px;
+}
+table{
+  width: 100%;
+  border-collapse:collapse;
+  text-align: left;
+  text-align: center;
+}
+table th,table td{
+  border: 1px solid #000;
+  height: 30px;
+  line-height: 30px;
+  padding: 0px 10px;
+}
+table td.name{
+  width: 120px;
+}
+table td.content{
+  width: 210px;
+}
+.edit-inp{
+  width: 100%;
+  height: 80%;
+  border: none;
+  outline: none;
+}
+.edit-inp.sign{
+  width: 200px;
+}
+.date-inp{
+  width: 35px;
+  height: 24px;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #000;
+  text-align: center;
+}
+.long-inp{
+  width: 180px;
+  height: 24px;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #000;
+  text-align: left;
+}
+.longest-inp{
+  width: 330px;
+  height: 24px;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #000;
+  text-align: left;
+}
+.date-inp.end-year{
+  width: 40px;
+}
+.date-inp.start-year{
+  width: 50px;
+}
+.check-inp{
+  vertical-align: middle;
+  margin-right: 5px;
+}
+.edit-textarea{
+  width: 100%;
+  margin-bottom:-5px;
+  margin-top: 5px;
+  border: none;
+  outline: none;
+  resize: none;
+  overflow: visible;
+}
+/*2017-4-11*/
+.ucar-face img{
+  height: 367px;
+}
+td.n-b{
+  border: none;
+}
+.name-bar{
+  padding: 5px 0px;
+}
+.p-b-20{
+  padding-bottom: 20px;
+}
+td.func-num{
+  width: 10%;
+}
+td.func-ass{
+  width: 5%;
+}
+td.func-item{
+  width: 20%;
+}
+td.func-good{
+  width: 20%;
+}
+td.func-desc{
+  width:45%;
+}
+.lin-h-16{
+  line-height: 16px;
+}
