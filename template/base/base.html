@@ -14,26 +14,44 @@
   {% endblock %}
   {% include "base/js.html" %}
 </head>
-<body class="fix-header fix-sidebar card-no-border">
-  <div class="preloader">
-    <svg class="circular" viewBox="25 25 50 50">
-      <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
-    </svg>
-  </div>
-  <div id="main-wrapper">
-    {% include "base/top.html" %}
+<body>
+  <!-- Nav -->
+  <nav class="px-nav px-nav-left">
     {% include "base/menu.html" %}
-    <div class="page-wrapper">
-      {% block header %}
+  </nav>
+
+  <!-- Navbar -->
+  <nav class="navbar px-navbar">
+    {% include "base/top.html" %}
+  </nav>
+
+  <!-- Content -->
+  <div class="px-content">
+    <ol class="breadcrumb page-breadcrumb">
+      {% block breadCrumb %}
 
       {% endblock %}
+    </ol>
+    <div class="page-header content-header">
+      {% block contentHeader %}
+
+      {% endblock %}
+    </div>
+
+    <div class="content">
+      {% block message %}
+        {% for message in messages %}
+        <ul class="alert alert-{{message.tags}} dmsg">
+          <p> {{ message | safe }} </p>
+        </ul>
+        {% endfor %}
+      {% endblock %}
+
       {% block content %}
-
       {% endblock %}
-      {% include "base/footer.html" %}
     </div>
   </div>
-
+  {% include "base/footer.html" %}
   {% block script %}
 
   {% endblock %}

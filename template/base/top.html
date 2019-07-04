@@ -1,19 +1,30 @@
-<header class="topbar">
-  <nav class="navbar top-navbar navbar-expand-md navbar-light">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="javascript:;">
-        <img src="/static/images/logo-icon.png" alt="homepage" class="dark-logo" />
-        </b>
-        <span>
-          <img src="/static/images/logo-text.png" alt="homepage" class="dark-logo" />
-        </span>
+<div class="navbar-header">
+  <a class="navbar-brand" href="/">后台管理系统</a>
+</div>
+<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#px-navbar-collapse" aria-expanded="false"><i class="navbar-toggle-icon"></i></button>
+
+<div class="collapse navbar-collapse" id="px-navbar-collapse">
+  {#      <ul class="nav navbar-nav">#}
+  {#        <li><a href="#">Link</a></li>#}
+  {#      </ul>#}
+
+  <ul class="nav navbar-nav navbar-right">
+    <li class="dropdown user user-menu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+         aria-expanded="false">
+        <img src="/static/dist/img/avatar5.png" alt="" class="px-navbar-image">
+        <span class="hidden-md"></span>
       </a>
-    </div>
-    <div class="navbar-collapse">
-      <ul class="navbar-nav mr-auto mt-md-0">
-        <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up text-muted waves-effect waves-dark" href="javascript:;"><i class="mdi mdi-menu"></i></a> </li>
-        <li class="nav-item m-l-10"> <a class="nav-link sidebartoggler hidden-sm-down text-muted waves-effect waves-dark" href="javascript:;"><i class="ti-menu"></i></a> </li>
+      <ul class="dropdown-menu">
+        <li><a href="#">&nbsp;&nbsp;修改密码</a></li>
+        <li class="divider"></li>
+        <li><a id="logout" href="#"><i class="dropdown-icon fa fa-power-off"></i>&nbsp;&nbsp;退出</a>
+        </li>
       </ul>
-    </div>
-  </nav>
-</header>
+    </li>
+  </ul>
+</div>
+
+<script type="text/javascript">
+  
+</script>
