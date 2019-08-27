@@ -6,3 +6,4 @@ django-bootstrap-pagination==1.7.0
 django-redis==4.10.0
 celery==4.2.1
 kombu==4.3.0
+djangorestframework==3.9.4

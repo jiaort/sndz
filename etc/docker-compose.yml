@@ -8,4 +8,4 @@ hermes-test:
         - /home/data/docker/sndz/venv:/opt/django/venv
         - /root/.ssh:/root/.ssh
     ports:
-        - "8060:8000"
+        - "8091:8000"
