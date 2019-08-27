@@ -1,4 +1,4 @@
-hermes-test:
+sndz:
     image: centos-django:1557050764
     container_name: sndz
     restart: always

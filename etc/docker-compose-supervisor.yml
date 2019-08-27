@@ -1,4 +1,4 @@
-pandora_marketing_supervisor:
+sndz_supervisor:
     image: centos-django-supervisor:1557050764
     container_name: sndz_supervisor
     restart: always
