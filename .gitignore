@@ -6,4 +6,4 @@ logs/*
 .coverage
 .*.swp
 .idea/*
-.vscode/*
+.vscode/
